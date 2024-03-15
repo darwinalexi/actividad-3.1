@@ -1,0 +1,333 @@
+<h1>Documentación Módulo Comentarios</h1>
+<hr>
+<h3>Requerimiento 1 Documentación Del ENDPOINT COMENTARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar Comentario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/comentarios</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Mostrar todos los comentarios guardados en la base de datos</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+              "id": 1,
+              "comentario": "comentario",
+              "id_usuario": 1,
+              "id_publicacion": 3,
+              "fecha": "2024-01-25T05:00:00.000Z"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje":"No hay comentarios"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Estefania Chilito Zuñiga</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 2 Documentación Del ENDPOINT COMENTARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Crear comentario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/comentarios</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite crear un comentario proporcionando los datos requeridos</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON:{
+                "comentario": "comentario 2",
+                "id_usuario": 1,
+                "id_publicacion": 3,
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Comentario creado con exito"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo crear el comentario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Estefania Chilito Zuñiga</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 3 Documentación Del ENDPOINT COMENTARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Actualizar comentario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/comentarios/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Actualizar un comentario mediante su ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON{
+                "comentario": "lorem ipsum"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Comentario actualizado"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo actualizar el comentario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Estefania Chilito Zuñiga</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 4 Documentación Del ENDPOINT COMENTARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar un comentario por su ID</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/comentarios/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Muestra un comentario por medio de su ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+              "id": 1,
+              "comentario": "comentario",
+              "id_usuario": 1,
+              "id_publicacion": 3,
+              "fecha": "2024-01-25T05:00:00.000Z"
+            } <br>
+          
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje":"no se encontró el comentario"
+            } <br>
+ 
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Estefania Chilito Zuñiga</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 5 Documentación Del ENDPOINT COMENTARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Eliminar un comentario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/comentarios/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Elimina un comentario por medio de su ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Haz eliminado con exito el comentario"
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró el comentario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Estefania Chilito Zuñiga</td>
+    </tr>
+</table>

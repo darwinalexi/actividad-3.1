@@ -1,0 +1,139 @@
+<h1>Documentación Módulo Autenticación</h1>
+<hr>
+<h3>Requerimiento 1 Documentación Del ENDPOINT AUTENTICACION</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Registrarse</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/register</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite al cliente poder crear un usuario en el sistema</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Todos</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>JSON{
+                "nombre": "Diego",
+                "correo": "diego@gmail.com",
+                "clave": "diego"    
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Usuario registrado con exito"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "Mensaje": "No se ha podido registrar el usuario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 3 Documentación Del ENDPOINT AUTENTICACION</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Iniciar Sesión</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/login</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Iniciar sesión para recibir el token de Autenticación</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>null</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Todos</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON{
+                "correo": "diego@gmail.com",
+                "clave": "diego"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "resultado": [
+                  {
+                    "id": 1,
+                    "nombre_completo": "Diego",
+                    "correo": "diego@gmail.com",
+                    "clave": "diego123",
+                    "tipo": "admin"
+                  }
+                ],
+                "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHRhZG8iOlt7ImlkIjoxLCJub21icmVfY29tcGxldG8iOiJEaWVnbyIsImNvcnJlbyI6ImRpZWdvQGdtYWlsLmNvbSIsImNsYXZlIjoiZGllZ28xMjMiLCJ0aXBvIjoiYWRtaW4ifV0sImlhdCI6MTcwOTUxMTA3MiwiZXhwIjoxNzA5NTk3NDcyfQ.qDHaOzO690YmFcv3foGPKXpYIY0UXnpAyUcyJUFCC84"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "Usuario no encontrado"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+<hr>

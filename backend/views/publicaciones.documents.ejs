@@ -1,0 +1,334 @@
+<h1>Documentación Módulo Publicaciones</h1>
+<hr>
+<h3>Requerimiento 1 Documentación Del ENDPOINT PUBLICACIONES</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Listar publicaciones</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/publicaciones</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite listar publicaciones todas registradas en la base de datos</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Todos</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "id": 3,
+                "nombre": "Publicación",
+                "descripcion": "lorem ipsum",
+                "imagen": "imagen.png",
+                "fuentes": "www.com",
+                "tipo": "Producción",
+                "estado": null,
+                "fecha": "2024-01-25T05:00:00.000Z",
+                "id_usuario": 1
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No encontramos publicaciones"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 2 Documentación Del ENDPOINT PUBLICACIONES</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Crear una publicación </td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/publicaciones</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite crear publicaciones con los datos minimos para su exposición</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Todos</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON{
+
+                "id": 1,
+                "nombre": "Cafe Huilense",
+                "descripcion": "El mejor del Huila",
+                "imagen": "no existe",
+                "fuentes": "cafehuilense.com",
+                "tipo": "Producción",
+                "id_usuario": 3
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "La publicación ha sido creada con éxito!"
+            }    <br>
+            Incorrecto:
+            Status: 400
+            JSON {
+                "mensaje": "El ID de usuario debe ser un número válido."
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró el usuario con el ID proporcionado."
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo crear la publicación"
+            } <br>
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 3 Documentación Del ENDPOINT PUBLICACIONES</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Actualizar una publicación</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/publicaciones/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite actualizar publicaciones registradas en la base de datos por medio del ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administrador, Redactor</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON:{ 
+                "nombre": "Cafe del Sur huilense"
+            }
+    
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "La publicación ha sido actualizada"
+            } <br>
+        
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo actualizar la publicación, ¡intente de nuevo!"
+            } <br>
+        
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 4 Documentación Del ENDPOINT PUBLICACIONES</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostar una publicación por su ID</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/publicaciones/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite mostrar una publicacion registrada en la base de datos por ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Todos</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+              "id": 3,
+              "nombre": "Publicación",
+              "descripcion": "lorem ipsum",
+              "imagen": "imagen.png",
+              "fuentes": "www.com",
+              "tipo": "Producción",
+              "estado": null,
+              "fecha": "2024-01-25T05:00:00.000Z",
+              "id_usuario": 1
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró esa publicación con ese ID"
+            } <br>
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+        </tr>
+</table>
+<hr>
+<h3>Requerimiento 5 Documentación Del ENDPOINT PUBLICACIONES</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Eliminar Una Publicacion</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/publicaciones/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite eliminar una publicacion registrada en la base de datos por ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Has eliminado con éxito la publicación"
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró esa publicación con ese ID y no se pudo eliminar"
+            } <br>
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+</table>
+        
+

@@ -1,0 +1,345 @@
+<h1>Documentación Módulo Articulos</h1>
+<hr>
+<h3>Requerimiento 1 Documentación Del ENDPOINT ARTICULOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar articulos</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/articulos</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite listar todos los articulos de la base de datos</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "id": 1,
+                "nombre": "Cuidado del Café",
+                "tipo": "PDF",
+                "enlace": "google.com",
+                "fecha": "2024-01-23T05:00:00.000Z",
+                "autor": "diego",
+                "id_usuario": 1
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "Mensaje": "No Se Encontro Ningún Articulo"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Leomar Andres España Castillo</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 2 Documentación Del ENDPOINT ARTICULOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Crear un articulo</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/articulos</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite crear un articulo con la información mínima para su exposición</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administrador,Redactor</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON:{
+
+            "nombre": "Como germinar cafe en tiempos de sequia",
+            "tipo": "PDF",
+            "enlace": "google.com",
+            "autor": "Andres",
+            "id_usuario": 1
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "Mensaje": "El Articulo Se Creo Con Exito"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "Mensaje": "No Se Pudo Crear El Articulo"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Leomar Andres España Castillo</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 3 Documentación Del ENDPOINT ARTICULOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Actualizar un articulo</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/articulos/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite actualizar un articulo por su identificador único (ID)</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administrador,Redactor</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON:{
+
+            "autor": "Nicolas",
+
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "El Articulo A Sido Modificado Con Exito"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No Se Pudo Modificar El Articulo"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Leomar Andres España Castillo</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 4 Documentación Del ENDPOINT ARTICULOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar un articulo por su ID</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/articulos/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite buscar un articulo por su identificador único (ID)</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Usuario, Redactor, Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+              "id": 1,
+              "nombre": "Cuidado del Café",
+              "tipo": "PDF",
+              "enlace": "google.com",
+              "fecha": "2024-01-23T05:00:00.000Z",
+              "autor": "diego",
+              "id_usuario": 1
+            } <br>
+          
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró Ningun articulo con ese ID"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Leomar Andres España Castillo</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 5 Documentación Del ENDPOINT ARTICULOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Eliminar un articulo</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/articulos/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Permite eliminar un articulo por su ID</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administrador</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Se Ha Eliminado Con Exito El Articulo"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró Ningun Articulo con ese ID y no se pudo Efectuar el eliminado"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Leomar Andres España Castillo</td>
+    </tr>
+</table>

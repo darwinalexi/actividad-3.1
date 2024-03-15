@@ -1,0 +1,334 @@
+<h1>Documentación Módulo Usuarios</h1>
+<hr>
+<h3>Requerimiento 1 Documentación Del ENDPOINT USUARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar usuarios</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/usuarios</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Mostrar todos los usuarios registrados en la base de datos</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "id": 1,
+                "nombre_completo": "Diego",
+                "correo": "diego@gmail.com",
+                "clave": "diego123",
+                "tipo": "admin"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje":"no hay usuarios registrados"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Darwin Alexis Guerrero Baos</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 2 Documentación Del ENDPOINT USUARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Crear un usuario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/usuarios</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Crear un usuario con los datos imprescindibles para su existencia</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON{
+                "nombre_completo": "andres",
+                "correo": "andres@gmail.com",
+                "clave": "andres123"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "El usuario ha sido creado con exito!!!!!"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo crear el usuario el usuario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Darwin Alexis Guerrero Baos</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 3 Documentación Del ENDPOINT USUARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Actualizar un usuario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/usuario/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Actualizar un usuario por medio de su Id</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td>
+            JSON{
+                "nombre_completo": "Leomar Andres"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "El usuario ha sido actualizado"
+            } <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se pudo actualizar el usuario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Darwin Alexis Guerrero Baos</td>
+    </tr>
+</table>
+<hr>
+<h3>Requerimiento 4 Documentación Del ENDPOINT USUARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Mostrar un usuario por su ID</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/usuarios/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Mostrar un usuario por su identificador único (ID)</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "id": 2,
+                "nombre_completo": "Leomar Andres",
+                "correo": "andres@gmail.com",
+                "clave": "andres123",
+                "tipo": "usuario"
+            }  <br>
+
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje":"no se encontro este usuario"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Darwin Alexis Guerrero Baos</td>
+    </tr>
+</table>
+
+
+<h3>Requerimiento 5 Documentación Del ENDPOINT USUARIOS</h3>
+<hr>
+<table>
+    <tr>
+        <td>NUMERO</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>NOMBRE DEL SERVICIO</td>
+        <td>Eliminar un usuario</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td>/usuarios/:id</td>
+    </tr>
+    <tr>
+        <td>DESCRIPCIÓN</td>
+        <td>Eliminar un usuario permanentemente</td>
+    </tr>
+    <tr>
+        <td>VERBO HTTP</td>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <td>HEADER</td>
+        <td>token: "token"</td>
+    </tr>
+    <tr>
+        <td>USUARIOS</td>
+        <td>Administradores</td>
+    </tr>
+    <tr>
+        <td>PETICIÓN body</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>RESPUESTA JSON</td>
+        <td>
+            Correcto:
+            Status: 200
+            JSON{
+                "mensaje": "Se eliminó exitosamente el usuario y los registros relacionados"
+            } <br>
+            Incorrecto:
+            Status: 404
+            JSON{
+                "mensaje": "No se encontró ningún usuario con ese ID y no se pudo eliminar"
+            } <br>
+
+            Error:
+            Status: 500
+            JSON{
+                "Mensaje": "error"
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td>Darwin Alexis Guerrero Baos</td>
+    </tr>
+</table>
